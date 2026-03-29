@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.rashid.collection</groupId>
+    <artifactId>contractor</artifactId>
+    <version>1.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>24</maven.compiler.release>
+        <exec.mainClass>contractor.Run</exec.mainClass>
+    </properties>
+    <name>Buildings</name>
+    <description>
+        A Contractor can design a building(skitch), most likely based on an already existing one,
+        In short it's providing info about the building, it's floors, it's units...and even it's tenants if there's any,
+        saved to the data-base to display or even update the info later on.
+        the updated info (permission) is based on the user's authority.
+        users are like Administrator, building-owners, customers(to be tenant).
+    </description>
+    <dependencies>
+        <dependency>
+            <groupId>com.rashid.collection</groupId>
+            <artifactId>graphicker</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.rashid.collection</groupId>
+            <artifactId>console-commands</artifactId>
+            <version>1.2</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>contractor.Run</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+<!--
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>units owners and tenants</name>
+            <url>https://maven.pkg.github.com/Rash-collection/ten-ten<reponame></url>
+        </repository>
+    </distributionManagement>
+-->
+</project>
