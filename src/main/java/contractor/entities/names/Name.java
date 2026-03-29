@@ -21,16 +21,27 @@ public abstract class Name<T extends Name<T>>
     protected Name(String name){
         if(name == null || name.isBlank()) throw new IllegalArgumentException(
                 "Must provide valid 'name' aka not (NULL, empty or blank).");
-        this.name = name;
+        this.name = name.trim();
     }
     /**Kinda copy-constructor, might throw NPE.*/
     protected Name(T name){
         this(name.name());
     }
+    @Override public boolean equals(Object o) {
+        if(this == o)return true;
+        // ignores the class difference (of subclasses) -_-
+        if(!(o instanceof Name n))return false;
+        return this.name.equals(n.name());
+    }
+    @Override public int hashCode() {
+        return this.name.hashCode();
+    }
     @Override public int compareTo(T o){
         return this.name.compareTo(o.name());
     }
-    
+    @Override public String toString(){
+        return this.self().getClass().getSimpleName() + "Name=\"" + this.name + "\"";
+    }
     @Deprecated(forRemoval=true)
     public final boolean isNull(){return this.name == null;}
     @Deprecated(forRemoval=true)
