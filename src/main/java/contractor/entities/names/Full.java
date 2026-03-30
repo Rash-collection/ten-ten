@@ -6,12 +6,15 @@
 package contractor.entities.names;
 
 import contractor.entities.Entity;
+import java.util.ArrayList;
 
 /**
  * <p></p>
  * @author rash4
  */
 public class Full extends Entity<Full> implements Comparable<Full>{
+    private final static ArrayList<Full> NAMES = new ArrayList<>();
+    public static ArrayList names(){return NAMES;}
     protected Full(String first, String last){
         if(first == null || first.isBlank() || last == null || last.isBlank())
             throw new IllegalArgumentException("firstName or lastName invalid");
@@ -26,7 +29,10 @@ public class Full extends Entity<Full> implements Comparable<Full>{
         this(neo.first, neo.last);
     }
     public static Full make(String p, String f){
-        return new Full(p, f);
+        final var name = new Full(p, f);
+        if(name == null) throw new IllegalArgumentException();
+        names().add(name);
+        return name;
     }
 
     @Override public int hashCode() {
