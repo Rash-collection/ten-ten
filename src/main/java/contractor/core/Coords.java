@@ -10,16 +10,16 @@ package contractor.core;
  * @author rash4
  */
 public final class Coords {
-    // Encode (row, col) → single int
+
     public static int encode(int row, int col) {
         return (row << 16) | (col & 0xFFFF);
     }
-    // Extract row from encoded int
+
     public static int row(int coord) {
-        return coord >>> 16;
+        return (short)(coord >> 16);   // preserves sign
     }
-    // Extract column from encoded int
+
     public static int col(int coord) {
-        return coord & 0xFFFF;
+        return (short)(coord & 0xFFFF); // preserves sign
     }
 }
