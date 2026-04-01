@@ -3,4 +3,4 @@
  * 
  * </p>
  */
-package names;
+package contractor.names;
