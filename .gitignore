@@ -2,3 +2,6 @@
 .idea/
 *.iml
 /notes/
+/target/
+.idea/
+*.iml

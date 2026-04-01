@@ -34,7 +34,19 @@ public class Full extends Entity<Full> implements Comparable<Full>{
         names().add(name);
         return name;
     }
-
+    public static Full make(String fullName){
+        if(fullName == null || fullName.isBlank())
+            throw new IllegalArgumentException("Invalid name value (NULL or Blank).");
+        final var parts = fullName.trim().split("\\s+");
+        final int len = parts.length;
+        if(len < 2) throw new IllegalArgumentException(
+                "Must enter a valid name with at least two words.");
+        final var lasty = new StringBuilder();
+        for(int i = 1; i < len; i++){
+            lasty.append(parts[i]);
+        }
+        return new Full(parts[0], lasty.toString());
+    }
     @Override public int hashCode() {
         int hash = 17;
         hash = 31 * hash + first.hashCode();
