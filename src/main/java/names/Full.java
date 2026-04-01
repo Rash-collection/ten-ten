@@ -3,9 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package contractor.entities.names;
+package names;
 
-import contractor.entities.Entity;
+import contractor.Entity;
 import java.util.ArrayList;
 
 /**
