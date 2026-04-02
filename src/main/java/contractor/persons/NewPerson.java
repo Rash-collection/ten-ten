@@ -28,6 +28,7 @@ public class NewPerson<T extends NewPerson<T>> extends Person<T>{
         return ("%s (%s%s) : \"%s\"").formatted(this.NICK.name(),
                 this.NAME.first().name(), this.NAME.last().name(), this.PASSWORD);
     }
+    public Password pass(){return this.PASSWORD;}
     final Nick NICK;
     final Password PASSWORD;
 }
