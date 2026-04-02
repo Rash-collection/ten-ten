@@ -16,7 +16,7 @@ import contractor.Entity;
  * @author rash4
  */
 public abstract class Name<T extends Name<T>> 
-        extends Entity<Name<T>> 
+        extends Entity<T> 
         implements Comparable<T>{
     @SuppressWarnings("unused")
     private Name(){
