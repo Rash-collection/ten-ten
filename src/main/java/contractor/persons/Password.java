@@ -75,6 +75,7 @@ public final class Password {
         }
         return dec.toString();
     }
+    @Override public String toString(){return incode(this.PASS);}
     public String pass(){return this.PASS;}
     private final String PASS;
 }

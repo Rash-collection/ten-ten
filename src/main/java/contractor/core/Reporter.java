@@ -1,0 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+package contractor.core;
+
+import java.sql.ResultSet;
+
+/**
+ * <p>Functional interface to do the {@code While(rs.next())} as in repeat.</p>
+ * @author rash4
+ */
+@FunctionalInterface
+public interface Reporter {
+    boolean route(ResultSet rs);
+}
