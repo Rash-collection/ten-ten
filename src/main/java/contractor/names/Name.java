@@ -8,7 +8,11 @@ package contractor.names;
 import contractor.Entity;
 
 /**
- * <p></p>
+ * <p>Base class for names.</p>
+ * <p>
+ * <b>DEFAULT</b> equals, compare and hashCode are <b>CASE</b> insensitive as default behavior.
+ * <br><b>PS :</b> override them when it matters.
+ * </p>
  * @author rash4
  */
 public abstract class Name<T extends Name<T>> 
@@ -31,13 +35,13 @@ public abstract class Name<T extends Name<T>>
         if(this == o)return true;
         // ignores the class difference (of subclasses) -_-
         if(!(o instanceof Name n))return false;
-        return this.name.equals(n.name());
+        return this.name.equalsIgnoreCase(n.name());
     }
     @Override public int hashCode() {
-        return this.name.hashCode();
+        return this.name.toLowerCase().hashCode();
     }
     @Override public int compareTo(T o){
-        return this.name.compareTo(o.name());
+        return this.name.compareToIgnoreCase(o.name());
     }
     @Override public String toString(){
         return this.self().getClass().getSimpleName() + "Name=\"" + this.name + "\"";
