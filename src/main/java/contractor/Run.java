@@ -4,8 +4,14 @@
 
 package contractor;
 
-import contractor.entities.names.Full;
-import static contractor.entities.names.Full.make;
+import contractor.names.First;
+import contractor.names.Full;
+import static contractor.names.Full.make;
+import contractor.names.Last;
+import contractor.names.Nick;
+import contractor.persons.NewPerson;
+import contractor.persons.Password;
+import contractor.persons.UsersManager;
 import java.util.Arrays;
 import static debug.Virtual.vc;
 
@@ -27,5 +33,12 @@ public class Run {
         final Full fu[] = new Full[]{n1, n2, make("hallo", "me")};
         java.util.Arrays.sort(fu);
         System.out.println(Arrays.toString(fu));
+        
+        final var rash = new NewPerson<>(n1.first(), n1.last(), new Nick("Larckh"), new Password("lemme@M123korewa"));
+        System.out.println(rash);
+        
+//        NewPerson guest = new NewPerson(new First("NULL"), new Last("NULL"), new Nick("GUEST"), new Password("01234567890"));
+//        UsersManager.regex(guest);
+        //
     }
 }
